@@ -1,7 +1,42 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "00627826-0f50-46e9-8cb9-b413ee882d42"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-proto-websocket": {
+      "projectType": "library",
+      "root": "projects/ngx-proto-websocket",
+      "sourceRoot": "projects/ngx-proto-websocket/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-proto-websocket/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-proto-websocket/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-proto-websocket/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-proto-websocket/src/test.ts",
+            "tsConfig": "projects/ngx-proto-websocket/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-proto-websocket/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-proto-websocket"
 }

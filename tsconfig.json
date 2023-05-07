@@ -11,6 +11,12 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "ngx-proto-websocket": [
+        "dist/ngx-proto-websocket/ngx-proto-websocket",
+        "dist/ngx-proto-websocket"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
